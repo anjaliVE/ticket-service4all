@@ -9,11 +9,8 @@
                 <!-- <div class="panel-heading">Ticket</div> -->
 
                 <div class="panel-body">
-
                     
-
                     @if(Auth::user()->is_admin)
-
                         <h3>
                             See all <a href="{{ url('admin/tickets') }}">tickets</a>
                         </h3>

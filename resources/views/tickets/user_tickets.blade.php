@@ -1,7 +1,5 @@
 @extends('dashboardlayout.customlayout')
-
 @section('title', 'My Tickets')
-
 @section('content')
 
     <div class="row">

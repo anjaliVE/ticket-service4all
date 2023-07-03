@@ -17,41 +17,22 @@ class TicketsController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function getAllTickets()
     {
         $tickets = Ticket::paginate(10);
 
         return view('tickets.index', compact('tickets'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function createNewTicket()
     {
         $categories = Category::all();
 
         return view('tickets.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, AppMailer $mailer)
+    public function storeNewTicketRecord(Request $request, AppMailer $mailer)
     {
-        // echo "<pre>";
-        // print_r($request);
-        // die;
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required',
@@ -63,11 +44,10 @@ class TicketsController extends Controller
         $ticket = new Ticket([
             'user_id' => Auth::user()->id,
             'ticket_id' => strtoupper(Str::random(12)),
-            'email'     => $request->input('email'),
-            'name'      => $request->input('name'),
-            'subject'     => $request->input('subject'),
-            'zip_code'     => $request->input('zip_code'),
-
+            'email' => $request->input('email'),
+            'name' => $request->input('name'),
+            'subject' => $request->input('subject'),
+            'zip_code' => $request->input('zip_code'),
             'category_id' => $request->input('category'),
             'priority' => $request->input('priority'),
             'message' => $request->input('message'),
@@ -76,7 +56,7 @@ class TicketsController extends Controller
 
         $ticket->save();
 
-         $mailer->sendTicketInformation(Auth::user(), $ticket); 
+        $mailer->sendTicketInformation(Auth::user(), $ticket); 
 
         return redirect()->back()->with("status", "A ticket with ID: #$ticket->ticket_id has been opened.");
     }
@@ -88,25 +68,19 @@ class TicketsController extends Controller
         return view('tickets.user_tickets', compact('tickets'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($ticket_id)
+    public function getTicketData($ticket_id)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
         return view('tickets.show', compact('ticket'));
     }
 
-    public function close($ticket_id, AppMailer $mailer)
+    public function closeTicket($ticket_id, AppMailer $mailer)
     {
         $ticket = Ticket::where('ticket_id', $ticket_id)->firstOrFail();
 
         $ticket->status = "Closed";
-
+        
         $ticket->save();
 
         $ticketOwner = $ticket->user;

@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
 {
-    public function postComment(Request $request, AppMailer $mailer)
+    public function __construct()
+    {
+         $this->middleware(['auth','verified']);
+    }
+
+    public function storeCommentData(Request $request, AppMailer $mailer)
     {
         $this->validate($request, [
             'comment' => 'required'

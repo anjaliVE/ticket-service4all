@@ -1,8 +1,5 @@
 @extends('dashboardlayout.customlayout')
-
-
 @section('title', 'Open Ticket')
-
 @section('content')
 
  <section class="create-ticket">
@@ -31,7 +28,7 @@
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
@@ -44,7 +41,7 @@
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
@@ -57,7 +54,7 @@
                                 <input id="subject" type="subject" class="form-control" name="subject" value="{{ old('subject') }}">
 
                                 @if ($errors->has('subject'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('subject') }}</strong>
                                     </span>
                                 @endif
@@ -70,7 +67,7 @@
                                 <input id="zip_code" type="zip_code" class="form-control" name="zip_code" value="{{ old('zip_code') }}">
 
                                 @if ($errors->has('zip_code'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('zip_code') }}</strong>
                                     </span>
                                 @endif
@@ -92,7 +89,7 @@
                                 </select>
 
                                 @if ($errors->has('category'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('category') }}</strong>
                                     </span>
                                 @endif
@@ -111,7 +108,7 @@
                                 </select>
 
                                 @if ($errors->has('priority'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('priority') }}</strong>
                                     </span>
                                 @endif
@@ -125,11 +122,11 @@
                                 <textarea rows="10" id="message" class="form-control" name="message"></textarea>
 
                                 @if ($errors->has('message'))
-                                    <span class="help-block">
+                                    <span class="help-block text-danger">
                                         <strong>{{ $errors->first('message') }}</strong>
                                     </span>
                                 @endif
-                            </div>
+                            </div> 
                         </div>
 
                         
