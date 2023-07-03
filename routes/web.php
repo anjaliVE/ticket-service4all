@@ -34,8 +34,6 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 
 
 
-
-
     Route::get('new-ticket', [App\Http\Controllers\TicketsController::class, 'create']);
     Route::post('new-ticket', [App\Http\Controllers\TicketsController::class, 'store']);
     Route::get('my_tickets', [App\Http\Controllers\TicketsController::class, 'userTickets'])->name('my_tickets');
