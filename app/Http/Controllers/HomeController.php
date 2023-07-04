@@ -33,11 +33,18 @@ class HomeController extends Controller
     }
 
     public function UpdateUserInfo(Request $request ){
-        $request->validate([
-            'name' =>'required|min:4|string|max:255',
-            'email'=>'required|email|string|max:255'
-        ]);
         $user =Auth::user();
+        if($user->email == $request->email){
+            $request->validate([
+                'name' =>'required|min:4|string|max:255'
+            ]);
+        }else{
+            $request->validate([
+                'name' =>'required|min:4|string|max:255',
+                'email'=>'required|email|string|max:255|unique:users'
+            ]);
+        }
+
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->save();

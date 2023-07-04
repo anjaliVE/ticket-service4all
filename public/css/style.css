@@ -31237,72 +31237,95 @@ body{background: #fff;}
 }
 /* Verification page css end here */
 
+
 /* Create ticket request start here */
 .create-ticket{
-    background: #eeeded;
+  background: #eeeded;
 }
 .create-ticket .login-wrapper{
-    box-shadow: 0 0px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 0px 30px rgba(0,0,0,0.1);
 }
 .create-ticket-form-wrapper{
-    padding: 0 10%;
-    min-height: 500px;
-    background: url(../images/verification-background-img.jpg) no-repeat;
-    background-position: right bottom;
+  padding: 0 10%;
+  min-height: 500px;
+  background: url(../images/verification-background-img.jpg) no-repeat;
+  background-position: right bottom;
 }
 .create-ticket-form-wrapper .login-form-row .form-col {
-    width: 50%;
-    float: left;
-    padding: 5px 10px;
+  width: 50%;
+  float: left;
+  padding: 5px 10px;
 }
 .create-ticket-form-wrapper .login-form-row .form-col-full{
-    width: 100%;
-    float: left;
-    padding: 5px 10px;
+  width: 100%;
+  float: left;
+  padding: 5px 10px;
 }
 .create-ticket-form-wrapper .login-form-row {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 .create-ticket-form-wrapper input.form-input, .create-ticket-form-wrapper select.form-input, .create-ticket-form-wrapper textarea{
-  padding: 15px 30px;
+padding: 15px 30px;
 }
 .custom-file-input::-webkit-file-upload-button {
-  visibility: hidden;
+visibility: hidden;
 }
 .custom-file-input {
-    width: 170px;
-    margin: 0 auto;
+  width: 170px;
+  margin: 0 auto;
 }
 .custom-file-input::before {
-  content: 'File Attachment';
-  display: inline-block;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  border-radius: 3px;
-  padding: 5px 8px 5px 40px;
-  outline: none;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  cursor: pointer;
-  text-shadow: 1px 1px #fff;
-  font-weight: 700;
-  font-size: 12pt;
-  background-image: url(../images/attach-icon.png);
-  background-repeat: no-repeat;
-  color: #ec6907;
+content: 'File Attachment';
+display: inline-block;
+background: linear-gradient(top, #f9f9f9, #e3e3e3);
+border-radius: 3px;
+padding: 5px 8px 5px 40px;
+outline: none;
+white-space: nowrap;
+-webkit-user-select: none;
+cursor: pointer;
+text-shadow: 1px 1px #fff;
+font-weight: 700;
+font-size: 12pt;
+background-image: url(../images/attach-icon.png);
+background-repeat: no-repeat;
+color: #ec6907;
 }
 .create-ticket-attachment input[type=file]:focus {
-    outline: none!important;
+  outline: none!important;
 }
+
 .custom-file-input:hover::before {
-  border-color: black;
+border-color: black;
 }
 .custom-file-input:active::before {
-  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 /* Create ticket request end here */
+/* Language section start */
+.language-translate-col #google_translate_element select {
+  width: 100%;
+  height: 35px;
+  border: #006df9 solid 3px;
+  color: #4e4e4e;
+}
+.navbar .header-contact-info ul.navbar-nav li a {
+  color: #fff;
+}
+.navbar-nav li.nav-item .dropdown-menu a {
+    color: #000!important;
+    font-size: 14px;
+}
+.skiptranslate iframe {
+    display: none;
+}
+.mg-top-none{top: 0!important;}
+/* Language section end */
 
-
+.main-panel .content-wrapper .create-ticket {
+    background: none;
+}
 /* ======== Responsive css start here ================= */
 
 @media screen and (max-width: 1199px){

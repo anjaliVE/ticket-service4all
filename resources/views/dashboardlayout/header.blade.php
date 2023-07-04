@@ -18,7 +18,7 @@
         
 
       </div>
-      <div class="navbar-menu-wrapper d-flex align-items-top"> 
+      <div class="navbar-menu-wrapper d-flex align-items-top header-contact-info"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <a href="tel:+9112545262548"><figure><img src="{{asset('images/phone-icon.png')}}"></figure> +91 125 4526 2548</a>
@@ -26,13 +26,13 @@
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <a href="mailto:johndoe@gmail.com" target="_blank"><figure><img src="{{asset('images/email-icon.png')}}"></figure> {{Auth::user()->email}}</a>
           </li>
-          <li>
-           <div id="google_translate_element"></div>
-            
-          </li>
+        
         </ul>
         @if(Auth::check() ) 
         <ul class="navbar-nav ms-auto">
+          <li class="language-translate-col">
+            <div id="google_translate_element"></div>
+          </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="javascript:void('0');" data-bs-toggle="dropdown" aria-expanded="false">
               <img class="img-xs rounded-circle" src="{{asset('images/face8.jpg')}}" alt="Profile image"> </a>
