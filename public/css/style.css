@@ -28447,6 +28447,15 @@ div.tagsinput span.tag a {
   -webkit-transition-property: color;
   font-weight: 400;
 }
+.sidebar-icon-col {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin-right: 1rem;
+}
+.sidebar-icon-col img {
+    max-width: 100%;
+}
 
 @media (max-width: 991px) {
   .sidebar .nav .nav-item .nav-link {
@@ -30212,8 +30221,9 @@ div.tagsinput span.tag a {
   }
   .sidebar-icon-only .sidebar {
     width: 70px;
-    background: #fff;
+    background: #818fa1;
   }
+  .sidebar-icon-only .sidebar .sidebar-icon-col{margin-right: 0;}
   .sidebar-icon-only .sidebar .nav {
     overflow: visible;
     margin-left: 0;

@@ -21,7 +21,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-top header-contact-info"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <a href="tel:+9112545262548"><figure><img src="{{asset('images/phone-icon.png')}}"></figure> +91 125 4526 2548</a>
+            <a href="tel:+9112545262548"><figure><img src="{{asset('images/phone-icon.png')}}"></figure> +31 (0)85 5000684</a>
           </li>
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <a href="mailto:johndoe@gmail.com" target="_blank"><figure><img src="{{asset('images/email-icon.png')}}"></figure> {{Auth::user()->email}}</a>
