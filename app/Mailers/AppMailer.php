@@ -24,15 +24,15 @@ class AppMailer
         $this->mailer = $mailer;
     }
 
-    public function sendTicketInformation($user, Ticket $ticket)
+    public function sendTicketInformation(Ticket $ticket)
     {
-        $this->to = $user->email;
+        $this->to = $ticket->email;
 
         $this->subject = "[Ticket ID: $ticket->ticket_id] $ticket->name";
 
         $this->view = 'emails.ticket_info';
 
-        $this->data = compact('user', 'ticket');
+        $this->data = compact('ticket');
 
 
         return $this->deliver();

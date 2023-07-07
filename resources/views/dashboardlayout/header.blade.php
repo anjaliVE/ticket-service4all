@@ -45,6 +45,13 @@
               </div>
 
               <a class="dropdown-item" href="{{route('userinfo')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+              
+              @if(Auth::user()->is_admin)
+                <a class="dropdown-item" href="{{route('create.ticket')}}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Create Ticket </a>
+                <a class="dropdown-item" href="{{ url('admin/register/agent') }}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Create Agent </a>
+                <a class="dropdown-item" href="{{ url('admin/register/customer') }}"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> Create Customer </a>
+              @endif
+
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>

@@ -51,4 +51,8 @@ class HomeController extends Controller
 
         return back()->with('message','Profile Updated');
     }
+
+    public function openRegisterationForm($userType){
+        dd($userType);
+    }
 }

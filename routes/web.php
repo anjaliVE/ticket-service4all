@@ -34,7 +34,7 @@ use App\Http\Controllers\{
     Route::post('update-userinfo', [HomeController::class, 'UpdateUserInfo'])->name('update-userinfo');
 
 
-    Route::get('new-ticket', [TicketsController::class, 'createNewTicket']);
+    Route::get('new-ticket', [TicketsController::class, 'createNewTicket'])->name('create.ticket');
     Route::post('new-ticket', [TicketsController::class, 'storeNewTicketRecord']);
     Route::get('my_tickets', [TicketsController::class, 'userTickets'])->name('my_tickets');
     Route::get('tickets/{ticket_id}', [TicketsController::class, 'getTicketData']);
@@ -44,6 +44,8 @@ use App\Http\Controllers\{
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function (){
         Route::get('tickets', [TicketsController::class, 'getAllTickets']);
         Route::post('close_ticket/{ticket_id}', [TicketsController::class, 'closeTicket']);
+        Route::get('register/{user_type}', [HomeController::class, 'openRegisterationForm']);
+     
     });
     
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
